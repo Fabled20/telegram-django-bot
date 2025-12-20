@@ -1,5 +1,5 @@
 python-telegram-bot==20.3
-Django==6.0
+Django==5.2.27
 python-dotenv==1.2.1
 APScheduler==3.6.3
 gunicorn
