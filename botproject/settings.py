@@ -5,6 +5,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 load_dotenv()
 
@@ -13,12 +14,15 @@ load_dotenv()
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-7@zpag)f*zg5xxnivj&zu#3^rr5$rivnu7)7)co&0h(ey&))+@'
+SECRET_KEY = os.getenv("SECRET_KEY")
+
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
+
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'telegram-django-bot-7zrx.onrender.com']
 
