@@ -1,1 +1,1 @@
-worker: python manage.py runbot
+python manage.py runbot
